@@ -1,5 +1,7 @@
 package homeworkfive;
 
+import java.util.Objects;
+
 public class Animal {
 
     private String eats;
@@ -49,5 +51,18 @@ public class Animal {
                 ", noOfLegs=" + noOfLegs +
                 ", vegetarian=" + vegetarian +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return noOfLegs == animal.noOfLegs && vegetarian == animal.vegetarian && Objects.equals(eats, animal.eats);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eats, noOfLegs, vegetarian);
     }
 }

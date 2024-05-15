@@ -22,6 +22,8 @@ public class Cat extends Animal {
         return color;
     }
 
+
+
     @Override
     public String toString() {
         return

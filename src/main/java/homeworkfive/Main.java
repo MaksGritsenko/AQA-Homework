@@ -11,5 +11,6 @@ public class Main {
         System.out.println(secondAnimal);
         System.out.println(firstCat);
         System.out.println(secondCat);
+        firstCat.setVegetarian(true);
     }
 }
