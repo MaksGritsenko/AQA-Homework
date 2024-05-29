@@ -14,7 +14,7 @@ public class Counter {
     public String toString() {
         return "{" +
                 "name:'" + name + '\'' +
-                ", count:" + occurrence +
+                ", occurrence:" + occurrence +
                 '}';
     }
 }
