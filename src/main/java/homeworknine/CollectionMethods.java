@@ -46,17 +46,21 @@ public class CollectionMethods {
         List<String> list1 = new ArrayList<>();
         List<Counter> list2 = new ArrayList<>();
         List<String> list3 = new ArrayList<>(list);
+        Map<String, Integer> map = new HashMap<>();
         while (list3.iterator().hasNext()) {
             String word = list3.iterator().next();
             for (String s : list3) {
                 if (s.equals(word)) {
                     count++;
                     list1.add(s);
+                    map.put(word, count);
                 }
             }
-            list2.add(new Counter(word, count));
             list3.removeAll(list1);
             count = 0;
+        }
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            list2.add(new Counter(entry.getKey(), entry.getValue()));
         }
         System.out.println(list2);
     }
