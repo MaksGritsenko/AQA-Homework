@@ -61,6 +61,7 @@ public class CollectionMethods {
         }
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             list2.add(new Counter(entry.getKey(), entry.getValue()));
+            System.out.println(map.getOrDefault("car", 4));
         }
         System.out.println(list2);
     }
