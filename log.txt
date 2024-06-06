@@ -1,0 +1,16 @@
+[INFO] User log in
+[WARN] Disk space is running low
+[WARN] Disk space is running low
+[INFO] File uploaded
+[ERROR] Unable to connect to databese
+[WARN] Disk space is running low
+[INFO] File uploaded
+[ERROR] Unable to connect to databese
+[INFO] User log in
+[WARN] Disk space is running low
+[INFO] File uploaded
+[INFO] File uploaded
+[ERROR] Unable to connect to databese
+[INFO] User log in
+[WARN] Disk space is running low
+[INFO] File uploaded
