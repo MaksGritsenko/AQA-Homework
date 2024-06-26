@@ -12,14 +12,23 @@ public class Hotel {
         reservations = new ArrayList<>();
     }
 
-    public boolean isRoomAvailable(int roomNumber, Date startDate, Date endDate) throws RoomAlreadyBookedException {
-        for (Reservation reservation : reservations) {
-            if (reservation.getRoomNumber() == roomNumber && (reservation.getStartDate().after(startDate) || reservation.getStartDate().equals(endDate))) {
-                throw new RoomAlreadyBookedException("Room:" + roomNumber + " is already booked on this date");
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public boolean isRoomAvailable(int roomNumber, Date startDate, Date endDate) throws RoomAlreadyBookedException, InvalidDateException {
+        if (endDate.before(startDate)) {
+            throw new InvalidDateException("INVALID DATA" + "\n" + "End day: " + endDate
+                    + " can't be earlier than Start day:" + startDate);
+        } else {
+            for (Reservation reservation : reservations) {
+                if (reservation.getRoomNumber() == roomNumber && (reservation.getStartDate().after(startDate) || reservation.getStartDate().equals(endDate))) {
+                    throw new RoomAlreadyBookedException("Room:" + roomNumber + " is already booked on this date");
+                }
+                return true;
             }
-            return true;
+            return false;
         }
-        return false;
     }
 
     public void bookRoom(Reservation newReservation) throws RoomAlreadyBookedException, InvalidDateException {
